@@ -49,32 +49,31 @@ fun BottomNavigationView(navController: NavHostController): Unit {
     }
 }
 
-/*
 @Composable
 fun MoreView(
     navController: NavHostController,
     loginViewModel: MoreViewModel
 ) {
-    val loginUIState = loginViewModel.loginUIState.observeAsState().value
-
-    when (loginUIState) {
-        is HomeUIState.Loading -> {
-        }
-
-        is HomeUIState.Error -> {
-        }
-
-        is HomeUIState.Loaded -> {
-        }
-
-        is HomeUIState.Normal -> {
-
-        }
-
-        else -> {
-            // TODO :: 에러 처리
-        }
-    }
+//    val loginUIState = loginViewModel.loginUIState.observeAsState().value
+//
+//    when (loginUIState) {
+//        is HomeUIState.Loading -> {
+//        }
+//
+//        is HomeUIState.Error -> {
+//        }
+//
+//        is HomeUIState.Loaded -> {
+//        }
+//
+//        is HomeUIState.Normal -> {
+//
+//        }
+//
+//        else -> {
+//            // TODO :: 에러 처리
+//        }
+//    }
 }
 
 
@@ -84,42 +83,42 @@ fun HomeView(
     navController: NavHostController,
     loginViewModel: HomeViewModel
 ) {
-    val loginUIState = loginViewModel.loginUIState.observeAsState().value
-
-    when (loginUIState) {
-        is LoginUIState.Loading -> {
-            LoginLoadingScreen()
-        }
-
-        is LoginUIState.Error -> {
-            LoginErrorScreen(errMsg = (loginUIState as LoginUIState.Error).errMsg)
-        }
-
-        is LoginUIState.Loaded -> {
-            loginViewModel.onClickCommListPopupItem((loginUIState as LoginUIState.Loaded).list[0])
-        }
-
-        is LoginUIState.Normal -> {
-            LoginPwdScreen(
-                id = loginViewModel.id,
-                onIdValueChange = { loginViewModel.id = it },
-                pwd = loginViewModel.pwd,
-                onPwdValueChange = { loginViewModel.pwd = it }
-            ) {
-                //TODO :: 경리나라 로그인 로직 필요시 주석해제
-//                loginViewModel.callLogin()
-
-                //TODO :: 경리나라 로그인 로직 필요시 주석처리
-                SerpNavigationActions(navController = navController).navigateToMain()
-            }
-        }
-
-        LoginUIState.Loaded2 -> {
-            SerpNavigationActions(navController = navController).navigateToMain()
-        }
-
-        else -> {
-            LoginErrorScreen("null이 발생하였습니다.")
-        }
-    }
-}*/
+//    val loginUIState = loginViewModel.loginUIState.observeAsState().value
+//
+//    when (loginUIState) {
+//        is LoginUIState.Loading -> {
+//            LoginLoadingScreen()
+//        }
+//
+//        is LoginUIState.Error -> {
+//            LoginErrorScreen(errMsg = (loginUIState as LoginUIState.Error).errMsg)
+//        }
+//
+//        is LoginUIState.Loaded -> {
+//            loginViewModel.onClickCommListPopupItem((loginUIState as LoginUIState.Loaded).list[0])
+//        }
+//
+//        is LoginUIState.Normal -> {
+//            LoginPwdScreen(
+//                id = loginViewModel.id,
+//                onIdValueChange = { loginViewModel.id = it },
+//                pwd = loginViewModel.pwd,
+//                onPwdValueChange = { loginViewModel.pwd = it }
+//            ) {
+//                //TODO :: 경리나라 로그인 로직 필요시 주석해제
+////                loginViewModel.callLogin()
+//
+//                //TODO :: 경리나라 로그인 로직 필요시 주석처리
+//                SerpNavigationActions(navController = navController).navigateToMain()
+//            }
+//        }
+//
+//        LoginUIState.Loaded2 -> {
+//            SerpNavigationActions(navController = navController).navigateToMain()
+//        }
+//
+//        else -> {
+//            LoginErrorScreen("null이 발생하였습니다.")
+//        }
+//    }
+}

@@ -7,9 +7,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/chatgpt_app_icon"
+        android:icon="@drawable/ai_fortune_teller_app_icon"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/chatgpt_app_icon"
+        android:roundIcon="@drawable/ai_fortune_teller_app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AI_FORTUNE_TELLER"
         tools:targetApi="31">

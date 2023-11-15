@@ -14,6 +14,7 @@ import com.supermin.ai_fortune_teller.viewmodel.MoreViewModel
 class MenuNavigation {
     companion object {
         const val HOME_ROUTE = "HOME_ROUTE"
+        const val INTRO_ROUTE = "INTRO_ROUTE"
         const val MORE_ROUTE = "MORE_ROUTE"
     }
 }
