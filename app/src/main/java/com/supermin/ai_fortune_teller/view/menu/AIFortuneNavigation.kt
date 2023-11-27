@@ -1,23 +1,25 @@
 package com.supermin.ai_fortune_teller.view
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
+import com.supermin.ai_fortune_teller.view.menu.HomeView
 
-import com.supermin.ai_fortune_teller.viewmodel.HomeViewModel
-import com.supermin.ai_fortune_teller.viewmodel.MoreViewModel
+import com.supermin.ai_fortune_teller.view.menu.viewmodel.HomeViewModel
+import com.supermin.ai_fortune_teller.view.menu.viewmodel.MoreViewModel
 
 
 class MenuNavigation {
     companion object {
         const val HOME_ROUTE = "HOME_ROUTE"
-        const val INTRO_ROUTE = "INTRO_ROUTE"
         const val MORE_ROUTE = "MORE_ROUTE"
     }
 }
+
+
 
 
 
@@ -46,8 +48,7 @@ class AIFortuneNavigationActions(navController: NavHostController) {
 }
 
 @Composable
-fun AIFortuneNavHost() {
-    val navController = rememberNavController()
+fun AIFortuneNavHost(navController: NavHostController) {
     NavHost(navController = navController, startDestination = MenuNavigation.HOME_ROUTE) {
         //메뉴 로직
         MenuComposables(navController)

@@ -1,5 +1,6 @@
-package com.supermin.ai_fortune_teller.viewmodel
+package com.supermin.ai_fortune_teller.view.menu.viewmodel
 
+import android.content.Intent
 import android.text.TextUtils
 import android.util.Log
 import androidx.compose.runtime.getValue
@@ -9,16 +10,38 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.supermin.ai_fortune_teller.R
+import com.supermin.ai_fortune_teller.uiState.MoreUIState
+import com.supermin.ai_fortune_teller.view.alarm.AlarmActivity
+import com.supermin.ai_fortune_teller.view.menu.listitem.MoreMenuGridListItem
+import com.supermin.ai_fortune_teller.view.setting.SettingActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class MoreViewModel() : ViewModel() {
+    private var _moreUIState: MutableLiveData<MoreUIState> = MutableLiveData(MoreUIState.Normal)
+    val moreUIState: LiveData<MoreUIState> = _moreUIState
+    var email by mutableStateOf("") //two way binding
+    var name by mutableStateOf("")//two way binding
+    var gender by mutableStateOf("")//two way binding
+
+    val moreMenuGridList : List<MoreMenuGridListItem> = listOf(
+        MoreMenuGridListItem(
+            title = "Setting",
+            icon = R.drawable.setting,
+            onClick = { it.startActivity(Intent(it, SettingActivity::class.java))  }
+        ),
+        MoreMenuGridListItem(
+            title = "Alarm",
+            icon = R.drawable.alarm,
+            onClick = { it.startActivity(Intent(it, AlarmActivity::class.java))  }
+        )
+    )
+
     /*private var apiClient: ApiClient = ApiClient()
     private var loginDataSource: SerpRemoteDataSource = SerpRemoteDataSourceImpl(apiClient)
     private var loginRepository: LoginRepository = LoginRepositoryImpl(loginDataSource)
-    private var _loginUIState: MutableLiveData<LoginUIState> = MutableLiveData(LoginUIState.Normal)
 
-    val loginUIState: LiveData<LoginUIState> = _loginUIState
 
     var id by mutableStateOf("") //two way binding
     var pwd by mutableStateOf("")//two way binding
